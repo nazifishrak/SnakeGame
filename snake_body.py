@@ -16,13 +16,21 @@ class Snake:
         self.create_snake()
         self.head: turtle.Turtle = self.boxes[0]
     
+    def add_box(self, position):
+        box = turtle.Turtle('square')
+        box.pu()
+        box.color('orange')
+        box.goto(position)
+        self.boxes.append(box)
+
     def create_snake(self):
         for i in STARTING_POSITIONS:
-            box = turtle.Turtle('square')
-            box.pu()
-            box.color('orange')
-            box.goto(i)
-            self.boxes.append(box)
+            self.add_box(i)
+
+    def grow(self):
+        self.add_box((self.boxes[-1].xcor(),self.boxes[-1].ycor()))
+
+
     def up(self):
         if self.head.heading() != DOWN:    
             self.head.setheading(UP)
