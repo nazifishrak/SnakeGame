@@ -1,5 +1,1 @@
-    screen.listen()
-    screen.onkey(snake.right, "Right")
-    screen.onkey(snake.up, "Up")
-    screen.onkey(snake.left, "Left")
-    screen.onkey(snake.down, "Down")
+snake_color

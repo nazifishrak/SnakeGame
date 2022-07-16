@@ -11,24 +11,24 @@ LEFT = 180
 DOWN = 270
 
 class Snake:
-    def __init__(self) -> None:
+    def __init__(self,color = 'teal') -> None:
         self.boxes: List[turtle.Turtle] = []
-        self.create_snake()
+        self.create_snake(color)
         self.head: turtle.Turtle = self.boxes[0]
     
-    def add_box(self, position):
+    def add_box(self, position,color = 'teal'):
         box = turtle.Turtle('square')
         box.pu()
-        box.color('orange')
+        box.color(color)
         box.goto(position)
         self.boxes.append(box)
 
-    def create_snake(self):
+    def create_snake(self,color = 'teal'):
         for i in STARTING_POSITIONS:
-            self.add_box(i)
+            self.add_box(i,color)
 
-    def grow(self):
-        self.add_box((self.boxes[-1].xcor(),self.boxes[-1].ycor()))
+    def grow(self,color='teal'):
+        self.add_box((self.boxes[-1].xcor(),self.boxes[-1].ycor()), color)
 
 
     def up(self):

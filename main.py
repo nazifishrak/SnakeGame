@@ -22,6 +22,7 @@ def main():
     
     # **********************Setting time delay of graphics based on easy/hard game level**************
     user_difficulty = screen.textinput("Choose Difficulty Level", "easy/hard")
+    # snake_color = screen.textinput("Choose Snake Color", "type color name e.g pink, blue, white etc")
     if user_difficulty.lower() == 'easy':
         user_difficulty = 0.1
     else:   
@@ -63,7 +64,7 @@ def main():
             if snake.head.distance(box) <= 15:
                 game_is_on = False
                 score_board.game_over()
-    play_again = screen.textinput("Do you want to play again?", "yes/no")
+    play_again = screen.textinput("Try again?", "yes/no")
     if play_again.lower() == 'yes':
         main()
     else:   
